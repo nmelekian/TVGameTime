@@ -1,13 +1,15 @@
 //
-//  ContentView.swift
+//  QuizView.swift
 //  TVGameTime
 //
-//  Created by Nick Melekian on 9/13/23.
+//  Created by Nick Melekian on 9/21/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct QuizView: View {
+    @EnvironmentObject var questionViewModel: QuestionViewModel
+    
     var body: some View {
         VStack {
             
@@ -50,11 +52,16 @@ struct ContentView: View {
             }
         }
         .padding()
+        .onAppear {
+            questionViewModel.questions.shuffle()
+        }
+        
     }
+        
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        QuizView()
     }
 }
