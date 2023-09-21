@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Question: Identifiable {
+struct Question: Identifiable, Hashable {
     var id = UUID()
     var category: Category
     var question: String

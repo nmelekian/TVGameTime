@@ -9,14 +9,44 @@ import SwiftUI
 
 struct CategoryView: View {
     var body: some View {
-        NavigationStack{
+        VStack{
             NavigationLink {
-                QuizView()
+                QuizView(category: Category.entertainment)
             } label: {
-                Text("Lol")
+                Text("Entertainment")
             }
-
+            
+            NavigationLink {
+                QuizView(category: Category.history)
+            } label: {
+                Text("History")
+            }
+            
+            NavigationLink {
+                QuizView(category: Category.math)
+            } label: {
+                Text("Math")
+            }
+            
+            NavigationLink {
+                QuizView(category: Category.science)
+            } label: {
+                Text("Science")
+            }
+            
+            NavigationLink {
+                QuizView(category: Category.geography)
+            } label: {
+                Text("Geography")
+            }
+            
+            
+            
+            
+            
+            
         }
+        
     }
 }
 

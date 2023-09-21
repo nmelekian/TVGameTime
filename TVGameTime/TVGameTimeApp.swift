@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TVGameTimeApp: App {
+    @StateObject var questionViewModel = QuestionViewModel()
     var body: some Scene {
         WindowGroup {
-           QuizView()
+           ContentView()
+                .environmentObject(questionViewModel)
         }
     }
 }
+
