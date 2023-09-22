@@ -13,7 +13,7 @@ struct CategoryView: View {
             NavigationLink {
                 QuizView(category: Category.entertainment)
             } label: {
-                Text("Entertainment")
+                Text(Category.entertainment.rawValue)
             }
             
             NavigationLink {
