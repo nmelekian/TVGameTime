@@ -10,13 +10,30 @@ import SwiftUI
 struct QuizView: View {
     @EnvironmentObject var questionViewModel: QuestionViewModel
     @State var category: Category
+    @State var questionCount = 0
     var body: some View {
         VStack {
+            
+            Text(questionViewModel.questions[questionCount].question)
+
+            ForEach(questionViewModel.questions[questionCount].answers, id: \.self) { answer in
+                Button {
+
+                } label: {
+                    Text(answer)
+                }
+
+            }
+            
+            
+                     
+            
 
         }
         .padding()
         .onAppear {
             questionViewModel.questions.shuffle()
+            questionViewModel.questions[questionCount].answers.shuffle()
         }
         
     }
