@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A608DC4F2ADDC44C00034E90 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608DC4E2ADDC44C00034E90 /* Score.swift */; };
 		A62981402AB24782007CC0D7 /* TVGameTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629813F2AB24782007CC0D7 /* TVGameTimeApp.swift */; };
 		A62981422AB24782007CC0D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62981412AB24782007CC0D7 /* ContentView.swift */; };
 		A62981442AB24783007CC0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62981432AB24783007CC0D7 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A608DC4E2ADDC44C00034E90 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		A629813C2AB24782007CC0D7 /* TVGameTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVGameTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A629813F2AB24782007CC0D7 /* TVGameTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGameTimeApp.swift; sourceTree = "<group>"; };
 		A62981412AB24782007CC0D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				A62981CA2ABDD613007CC0D7 /* TempStorage.swift */,
 				A629814F2AB25385007CC0D7 /* CategoryEnum.swift */,
 				A629814D2AB25360007CC0D7 /* QuestionModel.swift */,
+				A608DC4E2ADDC44C00034E90 /* Score.swift */,
 				A62981C22ABC979E007CC0D7 /* QuestionViewModel.swift */,
 				A62981C82ABDBE37007CC0D7 /* ButtonView.swift */,
 				A62981432AB24783007CC0D7 /* Assets.xcassets */,
@@ -162,6 +165,7 @@
 				A629814E2AB25360007CC0D7 /* QuestionModel.swift in Sources */,
 				A62981C92ABDBE37007CC0D7 /* ButtonView.swift in Sources */,
 				A62981C52ABCCE3B007CC0D7 /* CategoryView.swift in Sources */,
+				A608DC4F2ADDC44C00034E90 /* Score.swift in Sources */,
 				A62981C32ABC979E007CC0D7 /* QuestionViewModel.swift in Sources */,
 				A62981C72ABCCEC5007CC0D7 /* QuizView.swift in Sources */,
 				A62981CB2ABDD613007CC0D7 /* TempStorage.swift in Sources */,

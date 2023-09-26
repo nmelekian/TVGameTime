@@ -18,4 +18,12 @@ struct Question: Identifiable, Hashable {
         answers = answers.shuffled()
     }
     
+    func checkAnswer(inputAnswer: String) -> Bool {
+        if inputAnswer == correctAnswer {
+            return true
+        }
+        
+        return false
+    }
+    
 }
