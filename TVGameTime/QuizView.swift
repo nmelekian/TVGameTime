@@ -11,6 +11,8 @@ struct QuizView: View {
     @EnvironmentObject var questionViewModel: QuestionViewModel
     @State var category: Category
     @State var questionCount = 0
+    @State var isCorrect = false
+    
     var body: some View {
         VStack {
             
@@ -18,7 +20,15 @@ struct QuizView: View {
 
             ForEach(questionViewModel.questions[questionCount].answers, id: \.self) { answer in
                 Button {
-
+                   isCorrect = questionViewModel.questions[questionCount].checkAnswer(inputAnswer: answer)
+                    
+                    if isCorrect {
+                        questionViewModel.score += 1
+                        questionCount += 1
+                    } else {
+                        questionCount += 1
+                    }
+                    
                 } label: {
                     Text(answer)
                 }
