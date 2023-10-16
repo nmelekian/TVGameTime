@@ -16,7 +16,7 @@ struct QuizView: View {
     var body: some View {
         VStack {
             
-            Text(questionViewModel.questions[questionCount].question)
+            Text(questionViewModel.questions)
 
             ForEach(questionViewModel.questions[questionCount].answers, id: \.self) { answer in
                 Button {
