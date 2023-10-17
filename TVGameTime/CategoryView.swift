@@ -10,35 +10,18 @@ import SwiftUI
 struct CategoryView: View {
     var body: some View {
         VStack{
-            NavigationLink {
-                QuizView(category: Category.entertainment)
-            } label: {
-                Text(Category.entertainment.rawValue)
+            List {
+                ForEach(Categories.allCases, id: \.self) { category in
+                    NavigationLink {
+                        QuizView(category: category, childCategory: category.getChild())
+                    } label: {
+                        Text(category.rawValue)
+                    }
+                    
+                }
             }
             
-            NavigationLink {
-                QuizView(category: Category.history)
-            } label: {
-                Text("History")
-            }
             
-            NavigationLink {
-                QuizView(category: Category.math)
-            } label: {
-                Text("Math")
-            }
-            
-            NavigationLink {
-                QuizView(category: Category.science)
-            } label: {
-                Text("Science")
-            }
-            
-            NavigationLink {
-                QuizView(category: Category.geography)
-            } label: {
-                Text("Geography")
-            }
             
             
             
