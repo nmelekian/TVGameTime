@@ -10,6 +10,7 @@
 		A608DC4F2ADDC44C00034E90 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608DC4E2ADDC44C00034E90 /* Score.swift */; };
 		A608DC512ADDC7E600034E90 /* NewQuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608DC502ADDC7E600034E90 /* NewQuestionModel.swift */; };
 		A608DC532ADDCD5600034E90 /* QuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608DC522ADDCD5600034E90 /* QuestionService.swift */; };
+		A608DC552ADF005300034E90 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608DC542ADF005300034E90 /* Extensions.swift */; };
 		A62981402AB24782007CC0D7 /* TVGameTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A629813F2AB24782007CC0D7 /* TVGameTimeApp.swift */; };
 		A62981422AB24782007CC0D7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62981412AB24782007CC0D7 /* ContentView.swift */; };
 		A62981442AB24783007CC0D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A62981432AB24783007CC0D7 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		A608DC4E2ADDC44C00034E90 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		A608DC502ADDC7E600034E90 /* NewQuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionModel.swift; sourceTree = "<group>"; };
 		A608DC522ADDCD5600034E90 /* QuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionService.swift; sourceTree = "<group>"; };
+		A608DC542ADF005300034E90 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A629813C2AB24782007CC0D7 /* TVGameTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVGameTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A629813F2AB24782007CC0D7 /* TVGameTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVGameTimeApp.swift; sourceTree = "<group>"; };
 		A62981412AB24782007CC0D7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				A629814F2AB25385007CC0D7 /* CategoryEnum.swift */,
 				A629814D2AB25360007CC0D7 /* QuestionModel.swift */,
 				A608DC502ADDC7E600034E90 /* NewQuestionModel.swift */,
+				A608DC542ADF005300034E90 /* Extensions.swift */,
 				A608DC4E2ADDC44C00034E90 /* Score.swift */,
 				A62981C22ABC979E007CC0D7 /* QuestionViewModel.swift */,
 				A608DC522ADDCD5600034E90 /* QuestionService.swift */,
@@ -175,6 +178,7 @@
 				A608DC4F2ADDC44C00034E90 /* Score.swift in Sources */,
 				A62981C32ABC979E007CC0D7 /* QuestionViewModel.swift in Sources */,
 				A62981C72ABCCEC5007CC0D7 /* QuizView.swift in Sources */,
+				A608DC552ADF005300034E90 /* Extensions.swift in Sources */,
 				A62981CB2ABDD613007CC0D7 /* TempStorage.swift in Sources */,
 				A608DC532ADDCD5600034E90 /* QuestionService.swift in Sources */,
 				A62981422AB24782007CC0D7 /* ContentView.swift in Sources */,

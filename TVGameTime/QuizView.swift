@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuizView: View {
     @EnvironmentObject var questionViewModel: QuestionViewModel
-    @State var category: Category
+    @State var category: Categories
     @State var questionCount = 0
     @State var isCorrect = false
     
@@ -42,6 +42,9 @@ struct QuizView: View {
         }
         .padding()
         .onAppear {
+            Task {
+                try await questionViewModel.fetchQuestions(category: category.)
+            }
             questionViewModel.questions.shuffle()
             questionViewModel.questions[questionCount].answers.shuffle()
         }
