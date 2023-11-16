@@ -9,9 +9,13 @@ import Foundation
 
 @MainActor
 class QuestionViewModel: ObservableObject {
-//    @Published var questions: [Question] = [Question(category: .history, question: "What is the name of the first president", correctAnswer: "George Washington", answers: ["Abraham Lincoln", "Herbert Hoover", "George Washington", "Milard Filmore"]), Question(category: .math, question: "What is 2 + 2?", correctAnswer: "4", answers: ["4", "1", "3", "2"])]ojkhklhliklih
+//    @Published var questions: [Question] = [Question(category: .history, question: "What is the name of the first president", correctAnswer: "George Washington", answers: ["Abraham Lincoln", "Herbert Hoover", "George Washington", "Milard Filmore"]), Question(category: .math, question: "What is 2 + 2?", correctAnswer: "4", answers: ["4", "1", "3", "2"])]
     
-    @Published var questions: [Question] = []
+    @Published var questions: [Question] = [] {
+        didSet {
+            print(questions)
+        }
+    }
     @Published var score = 0
     
     let service: QuestionAPI
@@ -24,10 +28,10 @@ class QuestionViewModel: ObservableObject {
     }
     
     
-    func fetchQuestions(category: String) async throws {
+    func fetchQuestions(category: String, number: Int) async throws {
         self.isLoading = true
         do {
-            let data = try await service.fetchQuestion(category: category)
+            let data = try await service.fetchQuestion(category: category, qNumber: number)
                 
             self.questions = data
             self.isLoading = false

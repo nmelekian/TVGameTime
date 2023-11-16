@@ -11,67 +11,90 @@ struct QuizView: View {
     @EnvironmentObject var questionViewModel: QuestionViewModel
     @State var category: Categories
     @State var childCategory: String
-    @State var questionCount = 0
+    @State var totalQuestions: Int = 0
     @State var isCorrect = false
+    @State var questionIndex = 0
     
     var body: some View {
-        VStack {
-            
-           Text("\(questionViewModel.questions.count)")
-
-//            ForEach(questionViewModel.questions[questionCount].answers, id: \.self) { answer in
-//                Button {
-//                   isCorrect = questionViewModel.questions[questionCount].checkAnswer(inputAnswer: answer)
-//                    
-//                    if isCorrect {
-//                        questionViewModel.score += 1
-//                        questionCount += 1
-//                    } else {
-//                        questionCount += 1
-//                    }
-//                    
-//                } label: {
-//                    Text(answer)
-//                }
-//
-//            }
-            
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-            })
-            
-           HStack{
-                Button(action: {}, label: {
-                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                })
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-                })
+        VStack{
+            if questionViewModel.questions.isEmpty  {
+                //            LoadingView(category: category, childCategory: childCategory, totalQuestions: totalQuestions)
+                Text("Getting Ready")
+            }
+            else {
+                VStack {
+                    
+                    Text(questionIndex < 15 ? "\(questionViewModel.questions[questionIndex].question)" : "Empty")
+                    
+                    Text("\(questionViewModel.score)")
+                    
+                    
+                    Button(action: {
+                        checkAnswer(answer: questionViewModel.questions[questionIndex].options[0])
+                    }, label: {
+                        Text(questionIndex < 15 ? questionViewModel.questions[questionIndex].options[0] : "Empty")
+                    })
+                    
+                    HStack{
+                        Button(action: {
+                            checkAnswer(answer: questionViewModel.questions[questionIndex].options[1])
+                        }, label: {
+                            Text(questionIndex < 15 ? questionViewModel.questions[questionIndex].options[1] :"Empty")
+                        })
+                        
+                        Button(action: {
+                            checkAnswer(answer: questionViewModel.questions[questionIndex].options[2])
+                        }, label: {
+                            Text(questionIndex < 15 ? questionViewModel.questions[questionIndex].options[2] : "Empty")
+                        })
+                    }
+                    
+                    Button(action: {
+                        checkAnswer(answer: questionViewModel.questions[questionIndex].options[3])
+                    }, label: {
+                        Text(questionIndex < 15 ? questionViewModel.questions[questionIndex].options[3] : "Empty")
+                    })
+                    
+                    
+                    
+                }
+                .padding()
             }
             
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
-            })
-                     
             
-
-        }
-        .padding()
-        .onAppear {
+        } .onAppear {
             Task {
-                try await questionViewModel.fetchQuestions(category: childCategory)
+                try await questionViewModel.fetchQuestions(category: childCategory, number: totalQuestions)
+                questionViewModel.questions.shuffle()
+                
+                
             }
-            questionViewModel.questions.shuffle()
-//            questionViewModel.questions[questionCount].answers.shuffle()
+        }
+        
+        
+        
+    }
+    
+    func checkAnswer(answer: String) {
+        
+        if questionIndex <= 14 {
+            if answer == questionViewModel.questions[questionIndex].correctAnswer {
+                questionViewModel.score += 1
+                questionIndex += 1
+            } else {
+                questionIndex += 1
+            }
+        } else {
+            return
         }
         
     }
-        
+    
+    
 }
 
-struct QuizView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuizView(category: .Geography, childCategory: "hi")
-    }
-}
+//struct QuizView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        QuizView(category: .Geography, childCategory: "hi", totalQuestions: 10)
+//    }
+//}

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol QuestionAPI {
-    func fetchQuestion(category: String) async throws -> [Question]
+    func fetchQuestion(category: String, qNumber: Int) async throws -> [Question]
 }
 
 enum ApiError: Error {
@@ -23,8 +23,8 @@ struct QuestionAPIImpl: QuestionAPI {
     private let jsonDecoder = JSONDecoder()
     
     
-    func fetchQuestion(category: String) async throws -> [Question] {
-        guard let url = URL(string: "questions?limit=10&categories=\(category)", relativeTo: baseURL)
+    func fetchQuestion(category: String, qNumber: Int) async throws -> [Question] {
+        guard let url = URL(string: "questions?limit=\(qNumber)&categories=\(category)", relativeTo: baseURL)
         else { throw ApiError.invalidURL }
         let(data, _): ([Question], Int) = try await fetch(url: url)
         return data
